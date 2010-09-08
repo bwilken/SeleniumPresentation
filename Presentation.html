@@ -1,0 +1,470 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <!-- Slide meta data, remove/edit as you see fit -->
+        <title>Intro to Selenium</title>
+        <!-- Slippy core file and dependencies -->
+        <script type="text/javascript" src="slippy/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="slippy/jquery.history.js"></script>
+        <script type="text/javascript" src="slippy/slippy-0.9.0.js"></script>
+        <!-- Slippy structural styles -->
+		<link type="text/css" rel="stylesheet" href="slippy/reset.css"/>
+        <link type="text/css" rel="stylesheet" href="slippy/slippy-0.9.0.css"/>
+        <!-- Slippy theme -->
+        <link type="text/css" rel="stylesheet" href="slippy/slippy-dark.css"/>
+        <!-- Syntax highlighting core file  -->
+        <script type="text/javascript" src="slippy/highlighter/shCore.js"></script>
+        <!-- Syntax highlighting brushes, remove those you don't need -->
+        <script type="text/javascript" src="slippy/highlighter/shBrushBash.js"></script>
+        <script type="text/javascript" src="slippy/highlighter/shBrushCpp.js"></script>
+        <script type="text/javascript" src="slippy/highlighter/shBrushCSharp.js"></script>
+        <script type="text/javascript" src="slippy/highlighter/shBrushCss.js"></script>
+        <script type="text/javascript" src="slippy/highlighter/shBrushDelphi.js"></script>
+        <script type="text/javascript" src="slippy/highlighter/shBrushDiff.js"></script>
+        <script type="text/javascript" src="slippy/highlighter/shBrushGroovy.js"></script>
+        <script type="text/javascript" src="slippy/highlighter/shBrushJava.js"></script>
+        <script type="text/javascript" src="slippy/highlighter/shBrushJScript.js"></script>
+        <script type="text/javascript" src="slippy/highlighter/shBrushPhp.js"></script>
+        <script type="text/javascript" src="slippy/highlighter/shBrushPlain.js"></script>
+        <script type="text/javascript" src="slippy/highlighter/shBrushPython.js"></script>
+        <script type="text/javascript" src="slippy/highlighter/shBrushRuby.js"></script>
+        <script type="text/javascript" src="slippy/highlighter/shBrushScala.js"></script>
+        <script type="text/javascript" src="slippy/highlighter/shBrushSql.js"></script>
+        <script type="text/javascript" src="slippy/highlighter/shBrushVb.js"></script>
+        <script type="text/javascript" src="slippy/highlighter/shBrushXml.js"></script>
+        <!-- Syntax highlighting styles-->
+        <link type="text/css" rel="stylesheet" href="slippy/highlighter/shCore.css"/>
+        <link type="text/css" rel="stylesheet" href="slippy/highlighter/shThemeEclipse.css"/>
+        <!-- Slippy init code -->
+        <script type="text/javascript">
+            $(function() {
+                $(".slide").slippy();
+                SyntaxHighlighter.all();
+            });
+        </script>
+    </head>
+    <body>
+	
+		<div class="slide">
+			<div class="vcenter">
+				<h1 class="title"><div class="margin-bottom: 10px;">Selenium 101.3: Practical Functional Testing Techniques</div>
+                 </h1>
+
+                
+                    
+                    <h1><img src="Images/Selenium%20Logo.png" /></h1>
+                
+				<h4 class="text-center">Brad Wilkening</h4>
+				<h4 class="text-center">http://www.NotBrad.com</h4>
+				<h4 class="text-center">@bwilken on the Twitter</h4>
+			</div>
+		</div>
+		
+		
+		
+		<div class="slide">
+			<h1>Overview</h1>
+			<p>
+				
+			</p>
+			<ul>
+				<li>QA Testing Paradigms</li>               
+				<li>What else is out there for functional testing? : Comparison</li>
+				<li>Selenium Components</li>
+                    <ul type="circle">
+                    <li>Overview - How do these things tie together?</li>
+                    <li>IDE</li>
+                    <li>RC</li>
+                    <li>Server</li>
+                    </ul>
+			    <li>Cross Browser Goodness</li>
+                <ul type="circle">
+                    <li>Cloud Testing</li>
+                    <li>Browser Modes With RC/Server</li>
+                </ul>
+                <li>Practical Usage</li>
+                <li>Functional Testing Paradigms</li>
+			</ul>
+		</div>
+	
+    <div class="slide">
+			<h1>QA Testing Paradigms</h1>
+            <h2>"We just kinda play with it"</h2> 
+            <h1><img src="Images/Rubiks_Cube_variants.jpg"  /></h1>
+			
+		</div>
+	
+     <div class="slide">
+			<h1>QA Testing Paradigms</h1>
+			&nbsp;&nbsp;<h2>"We let the users test by releasing"</h2>
+            <br />
+            <table cellpadding="10">
+            <tr>
+            <td>
+                <img src="Images/volcano-eruption.jpg" height="350" />
+            </td>
+                <td style="vertical-align:top;"  >
+                <h1>&nbsp;&nbsp;&nbsp;Things end users users are really good at.</h1>
+                      <ul>
+                            <li>Testing</li>
+                            <li>Designing User interfaces</li>
+                            <li>Amateur nuclear engineering</li>
+                            <li>Competitive Skeet Shooting</li>
+                            <li>Are you still reading this?</li>
+                            <li>Honestly, this whole slide is just scary</li>
+                        </ul>
+                </td>
+            </tr>
+            </table>
+            
+            
+	 </div>
+	
+
+
+    <div class="slide">
+			<h1>QA Testing Paradigms</h1>
+			<p>		
+			</p>
+			<h2>"Case Testing"</h2>                        
+            <h1><img src="Images/RubiksSolved.gif" width="200" height="200" /></h1>
+	  </div>
+ 
+      <div class="slide">
+			<h1>QA Testing Paradigms</h1>
+			<p>		
+			</p>
+			<h2>"Story Testing"</h2>                   
+            <h1><img src="Images/RubiksSolved.gif" width="200" height="200" /> </h1>              
+            <h1>The same thing as test casing but includes congruence between Users and Testing</h1>              
+	  </div>
+
+      <div class="slide">
+			<h1>Software Quality</h1>
+			<p>		
+                What is most important to you?
+			</p>
+			<h2></h2>
+                  <p>Understandability, Completeness, Conciseness, Portability, Consistency, Maintainability, Testability, Usability, Reliability, Efficiency, Security</p>                
+                <ul>
+                    <li>Time to market</li>
+                    <li>Who you are marketing your software to?</li>
+                    <li>How much resources [$$$] you have to work with?</li>
+                    <li>How important the image of the product is?</li>
+                </ul>            
+      </div>
+      <div class="slide">
+			<h1>Tools: BDD</h1>
+              <div class="floating-images">
+				        <table>					
+					        <tr>
+						        <td>
+							        <img src="Images/Cucumber.png" width="200" height="100" />
+							        <img src="Images/FitNesseLogoMedium.jpg" width="100" height="100" />							
+                                    <img src="Images/SpecFlow.jpg" height="100"  />
+                                </td>
+                               
+					        </tr>
+				        </table> 
+                         </div>
+               <h2>And many others that need logos: Aubergine, NBehave, MSpec, NSpec, StoryQ . . </h2>
+              </div>
+            
+      <div class="slide">
+     		<h1>Tools: Functional</h1>
+                  <div class="floating-images">
+				            <table>					
+					            <tr>
+						            <td>
+                                            <img src="Images/Selenium%20Logo.png" width="200" />                                            
+                                            <img src="Images/ACT.png" width="250" />
+                                            <img src="Images/CodedUITests.png" width="250"  />
+                                            <img src="Images/hp-logo.jpg" width="150" />
+                                    </td>
+					            </tr>
+				            </table>
+                            <p></p>
+                  </div>
+      </div>
+
+
+      <div class="slide">
+            <h1>Selenium Components</h1>
+            <ul>
+                <li>IDE</li>
+                    <ul type="circle">
+                        <li>Add on for FireFox to "Record" tests.</li>
+                    </ul>
+                <li>Server</li>
+                    <ul type="circle">
+                        <li>Highjacks the browser</li>
+                        <li>Remote Control consumes this service [and cannot function without it]</li>
+                    </ul>
+                <li>Remote Control</li>
+                    <ul type="circle">
+                        <li>Remote control is the binary that you reference to use the server</li>
+                    </ul>
+            </ul>
+      </div>
+
+     
+
+      <div class="slide">
+            <h1>Selenium Components - IDE</h1>
+            <ul>
+                <li>Demo *</li>
+            </ul>   
+      </div>
+
+      <div class="slide">
+            <h1>Selenium Components - IDE</h1>
+            <ul>
+                <li>Test Case</li>
+                <li>Test Suite</li>
+                <li>Test Runner</li>
+                <li>Saving Tests for later</li>
+            </ul><p />
+            What doesn't record well?
+            <ul>
+            <li>Javascript select OnChange Event bindings</li>
+            <li>Drag and drop between divs</li>
+            <li>Doesn't account for Ajax call "latency"</li>
+            </ul>   
+      </div>
+      <div class="slide">
+            <h1>Selenium Components - Server</h1>
+            <h2>How to start the server</h2>
+                Check that you have java installed. Make sure it has one that says "Runtime Environment" in the title.
+               <pre class="brush:shell">
+C:\>java -version
+java version "1.6.0_20"
+Java(TM) SE Runtime Environment (build 1.6.0_20-b02)
+Java HotSpot(TM) 64-Bit Server VM (build 16.3-b01, mixed mode)
+               </pre>
+              
+      </div>
+
+       <div class="slide">
+            <h1>Selenium Components - Server</h1>
+            <h2>How to start the server</h2>
+              
+               Open the cmd prompt as Administrator. Start the server.
+               <pre class="brush:shell">
+
+C:\Selenium\RC\selenium-server-1.0.3>java -jar selenium-server.jar -log -selenium.log
+18:47:12.279 INFO - Writing debug logs to -selenium.log
+18:47:12.287 INFO - Java: Sun Microsystems Inc. 16.3-b01
+18:47:12.295 INFO - OS: Windows 7 6.1 amd64
+18:47:12.390 INFO - v2.0 [a2], with Core v2.0 [a2]
+18:47:13.770 INFO - RemoteWebDriver instances should connect to: http://127.0.0.1:4444/wd/hub
+18:47:13.776 INFO - Version Jetty/5.1.x
+18:47:14.003 INFO - Started HttpContext[/selenium-server/driver,/selenium-server/driver]
+18:47:14.115 INFO - Started HttpContext[/selenium-server,/selenium-server]
+18:47:14.144 INFO - Started HttpContext[/,/]
+18:47:14.812 INFO - Started org.openqa.jetty.jetty.servlet.ServletHandler@2996c1b0
+18:47:14.833 INFO - Started HttpContext[/wd,/wd]
+18:47:14.926 INFO - Started SocketListener on 0.0.0.0:4444
+18:47:14.942 INFO - Started org.openqa.jetty.jetty.Server@22998b08
+              </pre>
+      </div>
+      <div class="slide">
+            <h1>Selenium Components - Server</h1>
+            <ul>
+                <li>Server - Demo *</li>
+            </ul>   
+      </div>
+
+      <div class="slide">
+            <h1>Selenium Components - Remote Control</h1>
+            <ul>
+                <li>Remote Control - Demo *</li>
+            </ul>   
+      </div>
+
+      <div class="slide">
+           <h1>Selenium Components</h1>
+           <table><tr>
+           <td>
+                  <img src="Images/Dog-Poo-Trash-Can.jpg" width="300" height="300"/>
+           </td>
+           <td style="vertical-align:top;" >
+
+           <h1>&nbsp;&nbsp;&nbsp;What do I do with the code generated by IDE ?</h1>
+                  <ul>
+                      <li>Delete it and re-record it 1000 times</li>
+                      <li>Chop it up and make it reusable</li>
+                      <li>Let it teach you the ~132 methods of a single object</li>
+                      <li>Learn xpath better than you ever wanted to</li>
+                  </ul>
+           </td>
+           </tr>
+           </table>
+      </div>
+
+
+
+      <div class="slide">
+            <h1>Handy methods of the Selenium object</h1>
+                   <ul>
+                      <li>IsElementPresent</li>
+                      <ul type="circle">
+                            <li>IDE Does not account for Ajax latency</li>
+                            <li>Can be used to assert the existance of an element after an action</li>
+                      </ul>
+                      <li>DragAndDrop</li>
+                      <li>Type</li>
+                      <li>Click</li>
+                      <li>getEval</li>
+                      <ul type="circle">
+                            <li>Good for running things that didn't record appropriately</li>
+                            <li>Gives you the ability to log details about the test failures</li>
+                      </ul>
+                  </ul>
+      </div>
+
+      <div class="slide">
+       <h1>Cross Browser Goodness</h1>
+       <ul>
+       <li>Browser Run Modes</li>
+        <ul>
+        <li>*iexplore</li>
+        <li>*firefox</li>
+        </ul>
+       </ul>
+       <pre class="brush:csharp">
+selenium = new DefaultSelenium("localhost", 4444, "*iexplore", TestTargetUrl);
+       </pre>
+       </div>
+
+       <div class="slide">
+       <h1>Cross Browser Goodness</h1>
+       <pre class="brush:csharp">
+public sealed class BrowserTypes
+{
+private BrowserTypes() { }
+public static readonly string Firefox = "*firefox";
+public static readonly string Firefox2 = "*firefox2";
+public static readonly string Firefox3 = "*firefox3";
+public static readonly string Firefox4 = "*firefox4";
+public static readonly string Chrome = "*chrome";
+public static readonly string IE = "*iexplore";
+public static readonly string Opera = "*opera";
+}
+       </pre>
+       <h1>Profiles are a pain.</h1>
+       </div>
+
+       <div class="slide">
+       <h1>How does Brad use Selenium ?</h1>
+       <ul>
+       <li>Record tests</li>
+       <li>Delete the code</li>
+       <li>Rinse repeat</li>
+       <li>Chop up the recorded code</li>
+            <ul type="circle">              
+               <li>Organize it as one test per case/story</li>
+               <ul type="square">
+                    <li>Open specific url</li>
+                    <li>Perform test specific action</li>
+                    <li>Assert expected navigation</li>
+               </ul>
+           </ul>
+       </ul>
+
+       <pre class="brush:csharp">
+selenium.Open("/");
+selenium.Click("link=Crew");
+selenium.WaitForPageToLoad("5000");
+var uri = new Uri(selenium.GetLocation());
+Assert.AreEqual(uri.LocalPath, "Crew");
+       </pre>
+       </div>
+
+       <div class="slide">
+       <h1>Functional Testing Paradigms</h1>
+       <h2>Start with a "bare" database for every test cycle</h2>
+       <ul>
+           <li>Easier to implement and maintain</li>
+           <li>More consistent test execution</li>
+           <li>Fewer problems with indexed elements</li>
+       </ul></div>
+
+       <div class="slide">
+       <h1>Functional Testing Paradigms</h1>
+       <h2>Tests that can be run more than once</h2>
+       <ul>
+           <li> More versatile</li>
+           <li>More likely to break due to invalid indexed elements</li>
+           <li>Higher maintenace costs</li>
+       </ul>
+       <pre class="brush:csharp">
+selenium.Click("//div[@id='listItems']/table/tbody/tr[5]/td[3]/div");
+       </pre>
+       Can I just decorate my elements with Ids so that it doesn't index it?
+       </div>
+
+       <div class="slide">
+       <h1>Functional Testing Paradigms</h1>
+       <h2>Tests to be run on a copy of all customer tenants</h2>
+       <ul>
+           <li>Very effective </li>
+           <li>Has to integrate with application's crud repositories</li>
+           <li>Highest maintenance costs</li>
+           <li>Highest creation costs</li></ul>
+       </div>
+
+       <div class="slide">
+       <h1>Functional Testing Paradigms</h1>
+       <h2>Hand write tests to cover defects</h2>
+       <h1><img src="Images/buddy_jesus.jpg" height="150" width="150" /></h1>
+       <h2>Why wouldn't you do this?</h2>
+       <ul>
+            <li>You think this is overkill</li>
+            <li>You write bug free code</li>
+            <li>You are scared of the insane complexity of selenium</li>
+            <li>You aren't concerned about stability</li>
+       </ul>
+       </div>
+
+       <div class="slide">
+       <h1>Functional Testing Paradigms</h1>
+       <h2>Write tests to validate code quality</h2>       
+           <h1><img src="Images/Rotating_Black_Hole.jpg" height="250" width="185" /></h1>
+           <p>This topic was added to allow us to consider the other applications for Functional testing tools. I digress.</p>
+       </div>
+
+       <div class="slide">
+           <h1>Functional Testing Paradigms</h1>
+           <h2>Which one is appropriate for me ?</h2>
+           <ul>
+               <li>Product software company</li>
+               <li>Line of business applications</li>
+               <li>Time to market</li>
+           </ul>
+       </div>
+
+       <div class="slide">
+           <h1>BONUS: Selenium Cloud</h1>
+           <h2>Demo*</h2>
+           <h1>What are the benefits of using a selenium cloud service ? </h1>
+           <ul>
+               <li>You don't have to maintain your target environments [Browsers * OperatingSystems * BrowserVersions]</li>
+               <li>It is really easy to implement [I think]</li>
+               <li>Better coverage</li>
+           </ul>
+       </div>
+
+       <div class="slide">
+            
+       </div>
+
+       <div class="footer">
+			<span class="right"><a href="SeleniumHQ.org">SeleniumHQ.org</a></span>
+            <span class="left">Selenium</span>
+			<span class="right"><a href="http://github.com/bwilken/SeleniumPresentation">http://github.com/bwilken/SeleniumPresentation</a></span>
+            <span class="left">Brad Wilkening</span>
+            <hr class="defloat" />
+        </div>
+    </body>
+</html>
